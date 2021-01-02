@@ -1,5 +1,9 @@
 <template>
-  <div :id="`grid-${x}-${y}`" class="grid">
+  <div
+    :id="`grid-${x}-${y}`"
+    class="grid"
+    :style="`background-color:${color};`"
+  >
     <p>{{ x }}</p>
     <p>{{ y }}</p>
     <p>{{ color }}</p>
@@ -8,18 +12,29 @@
 <script>
 export default {
   props: {
-    x: { // x座標
+    x: {
+      // x座標
       type: String,
       required: true
     },
-    y: { // y座標
+    y: {
+      // y座標
       type: String,
       required: true
     },
-    color: { // 色(16進数)
+    color: {
+      // 色(16進数)
       type: String,
       required: true
-    },
+    }
   },
-}
+  methods: {
+    setColor() {
+      // 描画ツールに設定されている色を自身に設定する
+    },
+    setTempColor() {
+      // マウスオーバー時の仮色を設定する
+    }
+  }
+};
 </script>
