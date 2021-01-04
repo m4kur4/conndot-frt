@@ -34,6 +34,12 @@ const mutations = {
     // Vue.set(state, 'pallet.color', payload)
     state.pallet.color = payload;
   },
+  updateColor(state, payload) {
+    const x = payload.x;
+    const y = payload.y;
+    const color = payload.color;
+    state.canvas.data[x][y] = color;
+  },
 }
 const getters = {}
 const actions = {}

@@ -32,8 +32,8 @@ export default {
       },
       set(val) {
         // NOTE: Object型のstateで特定の値だけ更新ができない + vuexはペイロードにObject型を推奨
-        const payload = {color: val};
-        this.$store.commit('pages/room/updatePallet', val);
+        const payload = { color: val };
+        this.$store.commit("pages/room/updatePallet", val);
       }
     }
   }

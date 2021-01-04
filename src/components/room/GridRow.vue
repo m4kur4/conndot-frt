@@ -1,5 +1,5 @@
 <template>
-  <div :id="`gridrow-${x}`" class="gridrow">
+  <div :id="`gridrow-${x}`" class="grid-row">
     <Grid 
       v-for="(color, y) in grids"
       :key="`${x}-${y}`"
@@ -27,3 +27,8 @@ export default {
   },
 }
 </script>
+<style>
+.grid-row {
+  display: grid;
+}
+</style>

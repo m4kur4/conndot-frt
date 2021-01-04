@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <p>DotCanvas</p>
+  <div class="dot-canvas">
     <GridRow 
       v-for="(grids, x) in canvasData"
       :key="x"
@@ -54,3 +53,8 @@ export default {
   }
 };
 </script>
+<style>
+.dot-canvas {
+  display: grid;
+}
+</style>

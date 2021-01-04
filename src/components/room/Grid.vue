@@ -32,12 +32,22 @@ export default {
   methods: {
     setColor() {
       // 描画ツールに設定されている色を自身に設定する
-      this.color = this.$store.state.pages.room.pallet.color;
+      // TODO: propではなくstateを変更する
+      const payload = {
+        x: this.x,
+        y: this.y,
+        color: this.$store.state.pages.room.pallet.color
+      };
+      this.$store.commit("pages/room/updateColor", payload);
     },
     setTempColor() {
       // マウスオーバー時の仮色を設定する
-    
     }
   }
 };
 </script>
+<style>
+.grid {
+  display: grid;
+}
+</style>
