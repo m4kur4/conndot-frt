@@ -1,8 +1,9 @@
 <template>
   <div
-    :id="`grid-${x}-${y}`"
     class="grid"
+    :id="`grid-${x}-${y}`"
     :style="`background-color:${color};`"
+    @click="setColor"
   >
     <p>{{ x }}</p>
     <p>{{ y }}</p>
@@ -31,9 +32,11 @@ export default {
   methods: {
     setColor() {
       // 描画ツールに設定されている色を自身に設定する
+      this.color = this.$store.state.pages.room.pallet.color;
     },
     setTempColor() {
       // マウスオーバー時の仮色を設定する
+    
     }
   }
 };

@@ -1,40 +1,20 @@
 <template>
   <div>
-    <v-color-picker dot-size="25" swatches-max-height="200"></v-color-picker>
+    <v-color-picker
+      :show-swatches="true"
+      v-model="color"
+      dot-size="25"
+      swatches-max-height="200"
+    ></v-color-picker>
   </div>
 </template>
 <script>
 export default {
-  components: {
-  },
+  components: {},
   data() {
     return {
       // mainColor: '',
       // subColor: ''
-      user_id: null,
-      brands: {},
-      colors: {
-        hex: "#194d33",
-        hsl: {
-          h: 150,
-          s: 0.5,
-          l: 0.2,
-          a: 1
-        },
-        hsv: {
-          h: 150,
-          s: 0.66,
-          v: 0.3,
-          a: 1
-        },
-        rgba: {
-          r: 25,
-          g: 77,
-          b: 51,
-          a: 1
-        },
-        a: 1
-      }
     };
   },
   methods: {
@@ -43,6 +23,18 @@ export default {
     },
     setTempColor() {
       // マウスオーバー時の仮色を設定する
+    }
+  },
+  computed: {
+    color: {
+      get() {
+        return this.$store.state.pages.room.pallet.color;
+      },
+      set(val) {
+        // NOTE: Object型のstateで特定の値だけ更新ができない + vuexはペイロードにObject型を推奨
+        const payload = {color: val};
+        this.$store.commit('pages/room/updatePallet', val);
+      }
     }
   }
 };

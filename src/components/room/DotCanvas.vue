@@ -23,11 +23,14 @@ export default {
     GridRow
   },
   computed: {
+    canvas() {
+      return this.$store.state.pages.room.canvas;
+    },
     canvasData() {
-      return this.$store.state.pages.room.canvasData;
+      return this.canvas.data;
     },
     canvasProp() {
-      return this.$store.state.pages.room.canvasProp;
+      return this.canvas.prop;
     },
     width() {
       return this.canvasProp.width;
