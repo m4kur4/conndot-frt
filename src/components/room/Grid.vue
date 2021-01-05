@@ -5,9 +5,6 @@
     :style="`background-color:${color};`"
     @click="setColor"
   >
-    <p>{{ x }}</p>
-    <p>{{ y }}</p>
-    <p>{{ color }}</p>
   </div>
 </template>
 <script>

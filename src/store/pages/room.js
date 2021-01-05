@@ -20,8 +20,9 @@ const state = {
       },
     },
     prop: {
-      width: 333,
-      height: 600,
+      pixelRows: 3,
+      pixelColumns: 3,
+      pixelPerGrid: 128
     },
   },
   pallet: {

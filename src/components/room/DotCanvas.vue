@@ -1,21 +1,26 @@
 <template>
-  <div class="dot-canvas">
-    <GridRow 
+  <div
+    class="dot-canvas"
+    :style="
+      `grid-template-rows: repeat(${canvasProp.pixelRows}, ${canvasProp.pixelPerGrid})px;
+        grid-gap: 0 0;`
+    "
+  >
+    <GridRow
       v-for="(grids, x) in canvasData"
       :key="x"
       :grids="grids"
       :x="x"
+      :canvasProp="canvasProp"
     />
   </div>
 </template>
 <script>
-import GridRow from './GridRow';
+import GridRow from "./GridRow";
 
 export default {
   data() {
-    return {
-
-    };
+    return {};
   },
   props: {},
   components: {
@@ -32,24 +37,21 @@ export default {
       return this.canvas.prop;
     },
     width() {
-      return this.canvasProp.width;
+      return this.canvasProp.pixelColumns * this.canvasProp.pixelPerGrid;
     },
     height() {
-      return this.canvasProp.height;
+      return this.canvasProp.pixelRows * this.canvasProp.pixelPerGrid;
     }
   },
   methods: {
     /**
      * Canvasを初期化する
      */
-    initCanvas() {
-
-    },
+    initCanvas() {},
     getPositon() {}
   },
   mounted() {
     this.initCanvas();
-
   }
 };
 </script>
