@@ -1,8 +1,5 @@
 <template>
   <v-app id="app">
-    <h1 class="title">
-      room
-    </h1>
     <DotCanvas />
     <Pallet />
   </v-app>
@@ -24,3 +21,9 @@ export default {
   }
 };
 </script>
+<style>
+#app .v-application--wrap {
+  display: grid;
+  grid-template-columns: 600px 1fr;
+}
+</style>

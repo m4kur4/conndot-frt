@@ -2,8 +2,9 @@
   <div
     class="dot-canvas"
     :style="
-      `grid-template-rows: repeat(${canvasProp.pixelRows}, ${canvasProp.pixelPerGrid})px;
-        grid-gap: 0 0;`
+      `display: grid;
+      grid-template-rows: repeat(${canvasProp.pixelRows}, ${canvasProp.pixelPerGrid}px);
+      grid-gap: 0 0;`
     "
   >
     <GridRow
@@ -56,7 +57,5 @@ export default {
 };
 </script>
 <style>
-.dot-canvas {
-  display: grid;
-}
+
 </style>
