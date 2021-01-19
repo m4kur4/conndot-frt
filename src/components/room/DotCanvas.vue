@@ -46,13 +46,22 @@ export default {
   },
   methods: {
     /**
-     * Canvasを初期化する
+     * キャンバスを指定したサイズで初期化する
+     * 
+     * @param {int} cntX キャンバスのX軸方向ドット数
+     * @param {int} cntY キャンバスのY軸方向ドット数
      */
-    initCanvas() {},
+    initCanvas(x, y) {
+      const payload = {
+        x: x,
+        y: y
+      };
+      this.$store.dispatch("pages/room/initCanvas", payload);
+    },
     getPositon() {}
   },
   mounted() {
-    this.initCanvas();
+    this.initCanvas(12, 12);
   }
 };
 </script>

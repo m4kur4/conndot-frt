@@ -62,5 +62,11 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
+    extend(config, ctx) {
+      // Run ESLint on save
+      if (ctx.isDev) {
+        config.devtool = 'inline-cheap-module-source-map'
+      }
+    },
   }
 }
